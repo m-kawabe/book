@@ -29,15 +29,7 @@
   </div>
   <div class="field">
     <%= f.label :star %><br>
-    <%= f.number_field :star %>
-  </div>
-  <div class="field">
-    <%= f.label :image_name %><br>
-    <%= f.text_field :image_name %>
-  </div>
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.text_field :image %>
+    <%= f.number_field :star, value: 3, in: 1...6 %>
   </div>
   <div class="actions">
     <%= f.submit %>
