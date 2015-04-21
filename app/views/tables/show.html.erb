@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @table.title %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @table.price %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @table.date %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @table.url %>
+</p>
+
+<p>
+  <strong>Star:</strong>
+  <%= @table.star %>
+</p>
+
+<p>
+  <strong>Image name:</strong>
+  <%= @table.image_name %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @table.image %>
+</p>
+
+<%= link_to 'Edit', edit_table_path(@table) %> |
+<%= link_to 'Back', tables_path %>
