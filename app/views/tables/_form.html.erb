@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :date %><br>
-    <%= f.date_select :date %>
+    <%= f.date_select :date, :prompt => {:day => "Select day", :month => "Select month", :year => "Select year"} %>
   </div>
   <div class="field">
     <%= f.label :url %><br>
@@ -30,6 +30,14 @@
   <div class="field">
     <%= f.label :star %><br>
     <%= f.number_field :star, value: 3, in: 1...6 %>
+  </div>
+  <div class="field">
+    <%= f.label :image_name %><br>
+    <%= f.text_field :image_name%>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image, accept: "image/jpeg" %>
   </div>
   <div class="actions">
     <%= f.submit %>

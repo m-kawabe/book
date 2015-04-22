@@ -24,7 +24,20 @@ class TablesController < ApplicationController
   # POST /tables
   # POST /tables.json
   def create
-    @table = Table.new(table_params)
+    upload_file = table_params[:image]
+    table = {}
+
+    table[:title] = table_params[:title]
+    table[:price] = table_params[:price]
+    table[:date] = table_params[:date]
+    table[:url] = table_params[:url]
+    table[:star] = table_params[:star] 
+    if upload_file != nil 
+      table[:image_name] = upload_file.original_filename
+      table[:image] = upload_file.read
+    end 
+
+    @table = Table.new(table)
 
     respond_to do |format|
       if @table.save
@@ -59,6 +72,13 @@ class TablesController < ApplicationController
       format.html { redirect_to tables_url }
       format.json { head :no_content }
     end
+  end
+
+  def show_image
+    # send_dataはバイナリファイルをブラウザに表示するため
+    # http://railsdoc.com/references/send_data
+    @table = Table.find(params[:id])
+    send_data @table.image, :type => 'image/jpeg', :disposition => 'inline'
   end
 
   private

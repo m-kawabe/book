@@ -22,6 +22,7 @@
         <td><%= table.date %></td>
         <td><%= table.url %></td>
         <td><%= table.star %></td>
+        <td><%= image_tag show_image_table_path(table) %></td>
         <td><%= link_to 'Show', table %></td>
         <td><%= link_to 'Edit', edit_table_path(table) %></td>
         <td><%= link_to 'Destroy', table, method: :delete, data: { confirm: 'Are you sure?' } %></td>

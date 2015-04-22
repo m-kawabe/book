@@ -1,5 +1,10 @@
 Book::Application.routes.draw do
   resources :tables
+  resources :tables do
+    member do
+      get "show_image"
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
